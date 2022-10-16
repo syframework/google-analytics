@@ -15,11 +15,9 @@ class GoogleAnalytics extends WebComponent {
 	public function __construct($id) {
 		parent::__construct();
 		$this->id = $id;
-	}
-
-	public function __toString() {
-		$this->init();
-		return parent::__toString();
+		$this->mount(function () {
+			$this->init();
+		});
 	}
 
 	private function init() {
